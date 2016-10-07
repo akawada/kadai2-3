@@ -5,6 +5,7 @@ public class kadai2_3 {
 		Scanner scan = new Scanner(System.in);
 		String strin;
 		String strin2;
+		int ngflg=0;
 		double total = 0;
 		double num=0;
 		// 初回が数字でなければ終了する。
@@ -59,6 +60,9 @@ public class kadai2_3 {
 					total /= num;
 					if (num == 0 ) {
 						System.out.print("0で割ることはできません\n");
+						ngflg = 1;
+						break;
+						
 					}
 				}
 			
@@ -67,7 +71,10 @@ public class kadai2_3 {
 					System.out.println("演算子には+, -, *, /, のいずれかを入力する必要があります");
 				}
 		}
-				System.out.print( "答えは" + total + "です\n");
+				
+		if (ngflg == 0){
+			System.out.print( "答えは" + total + "です\n");
+		}
 				scan.close();
 	}
 
