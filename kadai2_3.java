@@ -5,9 +5,9 @@ public class kadai2_3 {
 		Scanner scan = new Scanner(System.in);
 		String strin;
 		String strin2;
-		int ngflg=0;
+		int ngflg = 0;
 		double total = 0;
-		double num=0;
+		double num = 0;
 		// 初回が数字でなければ終了する。
 		System.out.print("任意の数字を入力してください ");
 		strin =scan.next();
@@ -75,7 +75,7 @@ public class kadai2_3 {
 		if (ngflg == 0){
 			System.out.print( "答えは" + total + "です\n");
 		}
-				scan.close();
+		scan.close();
 	}
 
 	// 数値チェック
