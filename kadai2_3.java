@@ -5,9 +5,10 @@ public class kadai2_3 {
 		Scanner scan = new Scanner(System.in);
 		String strin;
 		String strin2;
-		int ngflg = 0;
+		int numflg =0;
+		int opeflg =0;
 		double total = 0;
-		double num = 0;
+		double num=0;
 		// 初回が数字でなければ終了する。
 		System.out.print("任意の数字を入力してください ");
 		strin =scan.next();
@@ -21,61 +22,64 @@ public class kadai2_3 {
 		
 		// 入力の繰り返し
 		while (true) {
-			// 四則演算の繰り返し
-			while(true){
+			if (opeflg == 0){
+				// 四則演算の繰り返し
 				System.out.println("演算子またはeを入力してください ");
 				System.out.print("eで演算結果を出力します ");
 				strin = scan.next();
-				if (chkope(strin) == false){
-					System.out.println("演算子には+, -, *, /, のいずれかを入力する必要があります");				}
-				else{
-					break;
-				}
-			}
-				if( strin.equals("e") || strin.equals("E")) {
-					break;
-				}
-	
-				// 数値の繰り返し
-				while (true) {
-					System.out.print("任意の数字を入力してください ");
-					strin2 =scan.next();
-						if (chknum(strin2) == false){
-						}
-						else{
-							num = Double.parseDouble(strin2);
-							break;
-						}
-				}
-				if (strin.equals("+")) {
-					total += num;
-				}
-				else if (strin.equals("-")) {
-					total -= num;
-				}
-				else if (strin.equals("*")) {
-					total *= num;
-				}
-				else if (strin.equals("/")) {
-					total /= num;
-					if (num == 0 ) {
-						System.out.print("0で割ることはできません\n");
-						ngflg = 1;
+				if (chkope(strin) == true){
+					opeflg = 1;
+					numflg = 0;
+					if( strin.equals("e") || strin.equals("E")) {
+						System.out.println("計算結果は" + total + "です");
 						break;
-						
 					}
 				}
-			
-				// 一応...
-				else {
-					System.out.println("演算子には+, -, *, /, のいずれかを入力する必要があります");
+				else{
+					System.out.println("演算子には+, -, *, /, のいずれかを入力する必要があります");	
+					continue;
 				}
-		}
-				
-		if (ngflg == 0){
-			System.out.print( "答えは" + total + "です\n");
-		}
-		scan.close();
+			}	
+			// 数値の繰り返し
+			if (numflg == 0){
+				System.out.print("任意の数字を入力してください ");
+				strin2 =scan.next();
+				if (chknum(strin2) == true){
+					opeflg = 0;
+					numflg = 1;
+					num = Double.parseDouble(strin2);
+					if (strin.equals("+")) {
+						total += num;
+						System.out.println( total);
+					}
+					else if (strin.equals("-")) {
+						total -= num;
+						System.out.println( total);
+					}
+					else if (strin.equals("*")) {
+						total *= num;
+						System.out.println( total);
+					}
+					else if (strin.equals("/")) {
+						if (num == 0 ) {
+							System.out.print("0で割ることはできません\n");
+						break;
+						}
+						total /= num;
+						System.out.println( total);
+						
+					}
+					// 一応...
+					else {
+						System.out.println("演算子には+, -, *, /, のいずれかを入力する必要があります");
+					}
+				}
+				else{
+					System.out.println("数字の入力をしてください");
+				}
+			}
+		}	
+				scan.close();
 	}
 
 	// 数値チェック
