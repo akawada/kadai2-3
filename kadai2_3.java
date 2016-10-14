@@ -63,7 +63,7 @@ public class kadai2_3 {
 					else if (strin.equals("/")) {
 						if (num == 0 ) {
 							System.out.print("0で割ることはできません\n");
-						break;
+							break;
 						}
 						total /= num;
 						System.out.println( total);
@@ -79,7 +79,7 @@ public class kadai2_3 {
 				}
 			}
 		}	
-				scan.close();
+		scan.close();
 	}
 
 	// 数値チェック
