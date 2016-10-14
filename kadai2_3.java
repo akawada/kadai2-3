@@ -22,8 +22,8 @@ public class kadai2_3 {
 		
 		// “ü—Í‚ÌŒJ‚è•Ô‚µ
 		while (true) {
+			// l‘¥‰‰Z‚ÌŒJ‚è•Ô‚µ
 			if (opeflg == 0){
-				// l‘¥‰‰Z‚ÌŒJ‚è•Ô‚µ
 				System.out.println("‰‰Zq‚Ü‚½‚Íe‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ ");
 				System.out.print("e‚Å‰‰ZŒ‹‰Ê‚ğo—Í‚µ‚Ü‚· ");
 				strin = scan.next();
@@ -50,15 +50,15 @@ public class kadai2_3 {
 					num = Double.parseDouble(strin2);
 					if (strin.equals("+")) {
 						total += num;
-						System.out.println( total);
+						System.out.println( total );
 					}
 					else if (strin.equals("-")) {
 						total -= num;
-						System.out.println( total);
+						System.out.println( total );
 					}
 					else if (strin.equals("*")) {
 						total *= num;
-						System.out.println( total);
+						System.out.println( total );
 					}
 					else if (strin.equals("/")) {
 						if (num == 0 ) {
@@ -66,7 +66,7 @@ public class kadai2_3 {
 							break;
 						}
 						total /= num;
-						System.out.println( total);
+						System.out.println( total );
 						
 					}
 					// ˆê‰...
