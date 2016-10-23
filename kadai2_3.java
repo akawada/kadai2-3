@@ -12,7 +12,7 @@ public class kadai2_3 {
 		// ‰‰ñ‚ª”š‚Å‚È‚¯‚ê‚ÎI—¹‚·‚éB
 		System.out.print("”CˆÓ‚Ì”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ ");
 		strin =scan.next();
-		if (chknum(strin) == false){
+		if (!chknum(strin)){
 			System.out.print("”š‚Ì“ü—Í‚Å‚È‚©‚Á‚½‚½‚ßI—¹‚µ‚Ü‚·");
 			System.exit(-1);
 		}
@@ -44,7 +44,7 @@ public class kadai2_3 {
 			if (numflg == 0){
 				System.out.print("”CˆÓ‚Ì”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ ");
 				strin2 =scan.next();
-				if (chknum(strin2) == true){
+				if (chknum(strin2)){
 					opeflg = 0;
 					numflg = 1;
 					num = Double.parseDouble(strin2);
